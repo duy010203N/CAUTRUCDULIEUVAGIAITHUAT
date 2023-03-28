@@ -1,30 +1,28 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-// Khai báo kiểu dữ liệu hỗn số
-typedef struct {
+struct HonSo {
     int nguyen;
     int tu;
     int mau;
-} HonSo;
+};
 
-// Hàm nhập hỗn số
-void nhapHonSo(HonSo *hs) {
-    printf("Nhap phan nguyen: ");
-    scanf("%d", &hs->nguyen);
-    printf("Nhap tu so: ");
-    scanf("%d", &hs->tu);
-    printf("Nhap mau so: ");
-    scanf("%d", &hs->mau);
+void nhap(HonSo &hs) {
+    cout << "Nhap phan nguyen: ";
+    cin >> hs.nguyen;
+    cout << "Nhap tu: ";
+    cin >> hs.tu;
+    cout << "Nhap mau: ";
+    cin >> hs.mau;
 }
 
-// Hàm xuất hỗn số
-void xuatHonSo(HonSo hs) {
-    printf("%d %d/%d", hs.nguyen, hs.tu, hs.mau);
+void xuat(HonSo hs) {
+    cout << hs.nguyen << " " << hs.tu << "/" << hs.mau << endl;
 }
 
 int main() {
     HonSo hs;
-    nhapHonSo(&hs);
-    xuatHonSo(hs);
+    nhap(hs);
+    xuat(hs);
     return 0;
 }
